@@ -1,0 +1,1 @@
+In this assignment I wrote the HTML file to create the structure of a web page. The CSS file was given by the Professor.

@@ -1,0 +1,83 @@
+body{
+font-family:Calibri, san-serif;
+font-size:medium;
+width:960px;
+margin:10px auto;
+}
+h1{
+margin:5px 0 0;
+font-family:"Century Gothic", Calibri, sans-serif;
+letter-spacing:2px;
+font-weight:400;
+font-size:300%;
+}
+#header .author{
+margin:0 0 20px;
+}
+#navigationBar{
+clear:both;
+margin:0 auto 20px;
+padding:0;
+}
+#navigationBar li{
+display:inline;
+padding:0 44px;
+}
+#navigationBar li:first-child{
+padding:0 44px 0 0;
+}
+#navigationBar li:last-child{
+padding:0 0 0 44px;
+}
+#blog #blog-link,#shows #shows-link,#memories #memories-link,#work #work-link,#community #community-link,#about #about-link{
+border-bottom:2px solid #D91C5C;
+color:#D91C5C;
+}
+#navigationBar a{
+display:inline;
+font-size:large;
+font-family:"Century Gothic", Calibri, sans-serif;
+color:#000;
+letter-spacing:1px;
+text-decoration:none;
+border-bottom:1px dashed #000;
+}
+#navigationBar a:hover{
+border-color:#D91C5C;
+}
+#mainContent{
+width:68%;
+float:left;
+}
+h2{
+font-family:"Century Gothic", Calibri, sans-serif;
+font-weight:400;
+letter-spacing:1px;
+margin:0;
+border-top:1px solid #000;
+}
+#sideContent{
+width:28%;
+float:right;
+text-align:right;
+margin:0 0 20px;
+padding:0 0 0;
+}
+.article{
+border-top:5px solid #000;
+margin:5px 0 20px;
+padding:5px 0 0;
+}
+.sidePost{
+border-top:5px solid #000;
+margin:5px 0 20px;
+padding:5px 0 0;
+}
+.sidePost p:first-child{
+margin:0;
+}
+#footer{
+clear:both;
+text-align:center;
+padding:20px 0 10px;
+}

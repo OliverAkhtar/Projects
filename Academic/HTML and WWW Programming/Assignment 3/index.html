@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Ordering System</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		
+	</head>
+	<body>
+		<h1>Oliver's Restaurant's Simple Delivery Form</h1>
+		<form id="order-information" action="order-complete.html" method="get">
+			<fieldset id="shipping-information">
+				<legend>Shipping Information</legend>
+				<label for="sFirstName">First Name</label>
+				<input id="sFirstName" name="sFirstName" type="text"/>
+				<label for="sLastName">Last Name</label>
+				<input id="sLastName" name="sLastName" type="text"/>
+				<label for="sAddrLn1">Address Line 1</label>
+				<input id="sAddrLn1" name="sAddrLn1" type="text"/>
+				<label for="sAddrLn2">Address Line 2</label>
+				<input id="sAddrLn2" name="sAddrLn2" type="text"/>
+				<label for="sCity">City</label>
+				<input id="sCity" name="sCity" type="text"/>
+				<label for="sState">State</label>
+				<input id="sState" name="sState" type="text" maxlength="2"/>
+				<label for="sZip">Zip</label>
+				<input id="sZip" name="sZip" type="text"/>
+			</fieldset>
+			<fieldset id="billing-information">
+				<legend>Billing Information</legend>
+				<div id="reuseGroup">
+					<input id="reuse" type="checkbox"/>
+					<label for="reuse">Use Shipping Information</label>
+				</div>
+				<label for="bFirstName">First Name</label>
+				<input id="bFirstName" name="bFirstName" type="text"/>
+				<label for="bLastName">Last Name</label>
+				<input id="bLastName" name="bLastName" type="text"/>
+				<label for="bAddrLn1">Address Line 1</label>
+				<input id="bAddrLn1" name="bAddrLn1" type="text"/>
+				<label for="bAddrLn2">Address Line 2</label>
+				<input id="bAddrLn2" name="bAddrLn2" type="text"/>
+				<label for="bCity">City</label>
+				<input id="bCity" name="bCity" type="text"/>
+				<label for="bState">State</label>
+				<input id="bState" name="bState" type="text" maxlength="2"/>
+				<label for="bZip">Zip</label>
+				<input id="bZip" name="bZip" type="text"/>
+			</fieldset>
+			<fieldset id="menu">
+				<legend>Prix Fixe Menu : $14.95</legend>
+				<label for="diners">Diners:</label>
+				<select name="diners" id="diners">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+				<fieldset id="diner-1" class="diner">
+					<legend>Diner:1</legend>
+					<fieldset>
+						<legend>Appetizer</legend>
+						<input type="radio" name="appetizer-1" class="appetizer" id="cheese-1" value="cheese"/>
+						<label for="cheese-1">Cheese Platter</label>
+						<input type="radio" name="appetizer-1" class="appetizer" id="sliders-1" value="sliders"/>
+						<label for="sliders-1">Mini Sliders</label>
+						<input type="radio" name="appetizer-1" class="appetizer" id="bruschetta-1" value="bruschetta"/>
+						<label for="bruschetta-1">Bruschetta</label>
+						<input type="radio" name="appetizer-1" class="appetizer" id="calamari-1" value="calamari"/>
+						<label for="calamari-1">Calamari</label>
+					</fieldset>
+					<fieldset>
+						<legend>Entree</legend>
+						<input type="radio" name="entree-1" class="entree" id="steak-1" value="steak"/>
+						<label for="steak-1">Sirloin Steak</label>
+						<input type="radio" name="entree-1" class="entree" id="chicken-1" value="chicken"/>
+						<label for="chicken-1">Chicken Fajitas</label>
+						<input type="radio" name="entree-1" class="entree" id="salad-1" value="salad"/>
+						<label for="salad-1">House Salad</label>
+						<input type="radio" name="entree-1" class="entree" id="eggplantparm-1" value="eggplantparm"/>
+						<label for="eggplantparm-1">Eggplant Parmesan</label>
+					</fieldset>
+					<fieldset>
+						<legend>Dessert</legend>
+						<input type="radio" name="dessert-1" class="dessert" id="tiramisu-1" value="tiramisu"/>
+						<label for="tiramisu-1">Tiramisu</label>
+						<input type="radio" name="dessert-1" class="dessert" id="bostoncream-1" value="bostoncream"/>
+						<label for="bostoncream-1">Boston Cream Pie</label>
+						<input type="radio" name="dessert-1" class="dessert" id="cheesecake-1" value="cheesecake"/>
+						<label for="cheesecake-1">New York Cheesecake</label>
+						<input type="radio" name="dessert-1" class="dessert" id="keylime-1" value="keylime"/>
+						<label for="keylime-1">Key Lime Pie</label>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+			<input type="submit" value="Submit Order"/>
+		</form>
+		
+		<script type="text/javascript" src="js/scripts.js"></script>
+	</body>
+</html>
+
+

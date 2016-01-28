@@ -1,0 +1,1 @@
+In this assignment I wrote the CSS to style a given HTML file from the Professor.

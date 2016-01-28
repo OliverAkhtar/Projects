@@ -1,0 +1,10 @@
+48,deGrom,Jacob,.120
+58,Mejia,Jenry,.140
+49,Niese,Jon,.091
+7,d'Arnaud,Travis,.324
+21,Duda,Lucas,.237
+4,Flores,Wilmner,.268
+11,Tejada,Ruben,.345
+5,Wright,David,.289
+3,Granderson,Curtis,.327
+12,Lagares,Juan,.298

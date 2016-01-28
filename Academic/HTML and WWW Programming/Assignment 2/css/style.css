@@ -1,0 +1,136 @@
+html,body{
+margin: 0;
+padding: 0;	
+}
+
+h1,h2{
+margin: 0;
+padding: 0;	
+}
+
+body{
+width: 960px;
+margin: 0 auto;	
+}
+
+#header{
+padding: 20px 0px 30px;
+border-bottom: 1px solid #CCCCCC;
+border-top: 1px solid #CCCCCC;
+margin: 20px 0px 0px 0px;	
+}
+
+#heading{
+float: left;
+padding: 0px 0px 0px 10px
+}
+
+#heading h1{
+width: 275px;
+font-family: "Century Gothic", san-serif;
+}
+
+#heading h2{
+width: 275px;
+font-family: "Century Gothic", san-serif;
+font-size: 90%;
+font-weight: normal;
+padding: 0px 0px 0px 20px;
+}
+
+#header img{
+border: 1px solid black;
+display: block;
+width: 75px;
+height: 75px;
+float: left;	
+}
+
+#header a{
+color: black;
+text-decoration: none;	
+}
+
+#header a:hover{
+text-decoration: underline;	
+}
+
+#mainNavigation{
+padding: 0;
+margin: 0;
+float: right;	
+}
+
+#mainNavigation > li{
+list-style: none;
+float: left;	
+}
+
+#mainNavigation > li > a{
+display: block;
+font-variant: small-caps;
+text-decoration: none;
+color: #F58;
+font-family: "Century Gothic", san-serif;
+font-size: larger;
+}
+
+#mainNavigation a:hover{
+text-decoration: underline;
+}
+
+.subNavigation{
+float: left;
+width: 180px;
+padding: 0;
+list-style: none;
+}
+
+.subNavigation a{
+color: black;
+text-decoration: none;
+font-family: "Century Gothic", san-serif;
+}
+
+#header:after{
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;	
+}
+
+#mainContent{
+font-family: Calibri, san-serif;
+width: 650px;
+float: left;
+margin: 0px 0px 0px 10px;
+}
+
+#sideContent{
+font-family: Calibri, san-serif;
+width: 280px;
+float: left;
+margin: 0px 0px 0px 20px;	
+}
+
+.article, .sidePost{
+padding: 20px 0px 10px;
+border-bottom: 1px solid #CCCCCC;
+text-align: justify;	
+}
+
+.article:last-child, .sidePost:last-child{
+border-bottom: none;	
+}
+
+#mainContent h1, #sideContent h2{
+font-family: Calibri, san-serif;	
+}
+
+#footer{
+clear: both;
+font-family: Calibri, san-serif;
+padding: 30px 0px 15px;
+text-align: center;	
+}
