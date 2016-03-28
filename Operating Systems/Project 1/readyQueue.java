@@ -2,10 +2,22 @@ import java.util.LinkedList;
 
 public class readyQueue
 {
-	static LinkedList<PCB> linkedQueue;
+	LinkedList<PCB> linkedQueue = new LinkedList<PCB>();
 	
-	static boolean isFull(){
+	boolean isFull()
+	{
 		return (linkedQueue.size() == 10);
+	}
+	
+	boolean isEmpty()
+	{
+		return (linkedQueue.size() == 0);
+	}
+	
+	void enqueue(PCB next)
+	{
+		next.state = "Ready";
+		linkedQueue.add(next);
 	}
 	
 	PCB dequeue()
