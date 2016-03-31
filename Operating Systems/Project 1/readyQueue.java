@@ -1,27 +1,65 @@
+/*
+This class implements a ready queue which simulates main memory for the CPU scheduler. For SJF scheduling, the customLinkedList allows for insertion 
+into the list based on ascending current CPU burst time ordering. Otherwise, Java's implementation of a linked list suffices.
+ */
 import java.util.LinkedList;
 
 public class readyQueue
 {
-	LinkedList<PCB> linkedQueue = new LinkedList<PCB>();
+	LinkedList<PCB> linkedQueue;
+	customLinkedList SJFQueue;
+	
+	readyQueue()
+	{
+		if(cpuscheduler.algorithm.equals("SJF"))
+			SJFQueue = new customLinkedList();
+		else
+			linkedQueue = new LinkedList<PCB>();
+	}
 	
 	boolean isFull()
 	{
-		return (linkedQueue.size() == 10);
+		if(cpuscheduler.algorithm.equals("SJF"))
+			return (SJFQueue.size() == 10);
+		else
+			return (linkedQueue.size() == 10);
 	}
 	
 	boolean isEmpty()
 	{
-		return (linkedQueue.size() == 0);
+		if(cpuscheduler.algorithm.equals("SJF"))
+			return (SJFQueue.size() == 0);
+		else
+			return (linkedQueue.size() == 0);
 	}
 	
 	void enqueue(PCB next)
 	{
-		next.state = "Ready";
-		linkedQueue.add(next);
+		if(cpuscheduler.algorithm.equals("SJF"))
+		{
+			next.state = "Ready";
+			SJFQueue.add(next);
+		}
+		else
+		{
+			next.state = "Ready";
+			linkedQueue.add(next);
+		}
 	}
 	
 	PCB dequeue()
 	{
-		return linkedQueue.remove();
+		if(cpuscheduler.algorithm.equals("SJF"))
+			return SJFQueue.remove();
+		else
+			return linkedQueue.remove();
+	}
+	
+	int size()
+	{
+		if(cpuscheduler.algorithm.equals("SJF"))
+			return SJFQueue.length;
+		else
+			return linkedQueue.size();
 	}
 }

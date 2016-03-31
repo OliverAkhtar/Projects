@@ -1,3 +1,12 @@
+/*
+This class allows the record keeping of scheduling algorithm statistics for each job, and average statistics for all jobs. Whenever a process is
+completed, a new jobStats object is created, which stores the job ID, arrival time, completion time, processing time, waiting time, and turnaround
+time for that job. That jobStats object added to a LinkedList of jobStat objects, for computation of average statistics at the end of the program
+simulation. Whenever a process terminates, and a jobStats object is created, statistics pertaining to that specific process is output via console.
+
+avgStats iterates through the allStats linked list, summing the processing, waiting, and turnaround times for each process, and computes and displays
+the averages to the console.
+ */
 import java.util.Iterator;
 import java.util.LinkedList;
 
