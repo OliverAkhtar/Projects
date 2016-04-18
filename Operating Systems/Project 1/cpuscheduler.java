@@ -30,7 +30,7 @@
  							end of the ready queue.
  */
 
-/*
+ /*
  The following class variables(static fields) are used to simulate resources, keep track of user input, and provide access to both from other 
  classes:
  	File jobs - Stores the input file(text) of jobs from main function argument.
@@ -43,24 +43,6 @@
  	
  Process scheduling is implemented via a function for a short term and long term scheduler. The short term scheduler, assigns the process at the head
  of the ready queue to the CPU. The long term scheduler loads new processes into the ready queue(main memory).
- 
- Static functions main, ShortTerm, and LongTerm, implement the following tasks:
- 	main:		First store the scheduling algorithm to be used throughout program execution, which user inputs via main function arguments. Based on
- 				the algorithm inputed, store the second main function argument which may be the time quantum, or name of text file. For Round Robbin,
- 				set the time quantum for processes within the CPU object myCPU. Open the text file, create the ready queue and blocked queue. Fill
- 				the ready queue with a process from the text file until it is full via the LongTerm function. Call the ShortTerm function to assign a
- 				process to the CPU until the ready queue is empty. Finally output the average statistics which evaluate scheduling algorithm used.
- 	ShortTerm:	First assign the process at the head of the ready queue to the CPU via the setProcess function of a CPU object. setProcess will also
- 				invoke other CPU methods that simulate execution and keep track of CPU clock cycles, those methods are described in the CPU class.
- 				For Round Robbin scheduling, if current CPU burst was not completed, the process is preemptively inserted into the end of the ready
- 				queue. If not, or if scheduling is not Round Robbin, the next CPU burst is assigned for that process. At that point, if the process
- 				is complete, a jobStats object is created to store average time evaluation statistics for that process, the constructor of 
- 				jobStats invokes a method that output time statistics specifically for that process, and the LongTerm function is called to load a 
- 				new process into the ready queue. If the process is not complete it sent sent to the blocked queue for I/O activity. Then, processes
- 				in the blocked queue which have completed I/O(after 10 time units), are inserted into the ready queue. Finally, statistics of jobs
- 				completed, amount of jobs in ready queue and blocked queue are output every 200 time units.
- 	LongTerm:	First the next line is read from the text file, the string is 'tokenized' to separate the information, and used to create a new
- 				Process Control Block(PCB) for that process, and that PCB is inserted into the ready queue.
  */
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -76,6 +58,14 @@ public class cpuscheduler
 	static CPU myCPU;
 	static int quantum;
 	static String algorithm;
+	
+	/*
+	main(): First store the scheduling algorithm to be used throughout program execution, which user inputs via main function arguments. Based on
+			the algorithm inputed, store the second main function argument which may be the time quantum, or name of text file. For Round Robbin,
+			set the time quantum for processes within the CPU object myCPU. Open the text file, create the ready queue and blocked queue. Fill
+			the ready queue with a process from the text file until it is full via the LongTerm function. Call the ShortTerm function to assign a
+			process to the CPU until the ready queue is empty. Finally output the average statistics which evaluate scheduling algorithm used.
+	*/
 	
 	public static void main(String args[]) throws FileNotFoundException
 	{
@@ -98,6 +88,18 @@ public class cpuscheduler
 			shortTerm();
 		jobStats.avgStats();
 	}
+	
+	/*
+	shortTerm():First assign the process at the head of the ready queue to the CPU via the setProcess function of a CPU object. setProcess will also
+ 				invoke other CPU methods that simulate execution and keep track of CPU clock cycles, those methods are described in the CPU class.
+ 				For Round Robbin scheduling, if current CPU burst was not completed, the process is preemptively inserted into the end of the ready
+ 				queue. If not, or if scheduling is not Round Robbin, the next CPU burst is assigned for that process. At that point, if the process
+ 				is complete, a jobStats object is created to store average time evaluation statistics for that process, the constructor of 
+ 				jobStats invokes a method that output time statistics specifically for that process, and the LongTerm function is called to load a 
+ 				new process into the ready queue. If the process is not complete it sent sent to the blocked queue for I/O activity. Then, processes
+ 				in the blocked queue which have completed I/O(after 10 time units), are inserted into the ready queue. Finally, statistics of jobs
+ 				completed, amount of jobs in ready queue and blocked queue are frequently output when CPU clock is divisible by 200 time units.
+	*/
 	
 	static void shortTerm()
 	{
@@ -125,7 +127,7 @@ public class cpuscheduler
 		while(!myBlockedQueue.isEmpty() && myBlockedQueue.IOComplete())
 				myReadyQueue.enqueue(myBlockedQueue.dequeue());
 		
-		if(myCPU.cpuClock % 200 == 0) //every 200 times units, output statistics
+		if(myCPU.cpuClock % 200 == 0) //output statistics whenever CPU clock divisible by 200
 		{
 			System.out.println("# of jobs in ReadyQueue: " + myReadyQueue.size() + "\n" +
 							   "# of jobs in BlockedQueue: " + myBlockedQueue.size() + "\n" + 
@@ -133,6 +135,11 @@ public class cpuscheduler
 			
 		}
 	}
+	
+	/*
+    longTerm():First the next line is read from the text file, the string is 'tokenized' to separate the information, and used to create a new
+			   Process Control Block(PCB) for that process, and that PCB is inserted into the ready queue.
+	*/
 	
 	static void longTerm()
 	{
