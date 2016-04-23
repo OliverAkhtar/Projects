@@ -1,1 +1,1 @@
-In this assignemnt I created forms in HTML for restuarant ordering. The CSS and JS files were given by the Professor.
+In this assignemnt I created forms in HTML, while using CSS and JavaScript for a restuarant ordering page. 
