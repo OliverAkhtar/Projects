@@ -1,0 +1,20 @@
+After compilation, run on command by entering: java InventoryDB input.txt logfile.txt
+
+Insert a new product into database:
+ Enter information into the textfields Product Name, Price, Quantity, and Threshold. Then press "Add row to table" button.
+
+Update product information:
+ Enter the name of the product whose information you wish to change in the Product Name textfield. Enter new information in
+ the Price, Quantity, and Threshold textfields. If certain information is to be remain unchanged, you must enter it regardless.
+ Then, press the "Update row via product name" button.
+
+Delete product:
+ Enter the name of the product you wish to delete in the Product Name textfield. Then press "Delete row via product name" button.
+
+Show products less than entered price:
+ To query the database into only displaying products less than an entered price, first enter the price in the Price textfield,
+ then press the "Show products less than entered price" button.
+
+NOTE: Text entered into text fields is case sensitive.
+
+All transactions made are recorded into the logfile.txt.

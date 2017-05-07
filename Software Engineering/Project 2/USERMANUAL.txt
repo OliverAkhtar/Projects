@@ -1,0 +1,14 @@
+After compilation, run on command line by entering: java WebpageProcess NameOfInputFile.txt NameOfOutputFile.txt
+
+All URLS are initially processed by outputting information about the web page file including content type, content length,
+last modified date, expiration, and content encoding.
+
+HTML,HTM, and TXT URLs are further processed by reading all lines from the web page file, then are are saved and written 
+to a text file with the same name as the web page file, to the same directory where the program is executed. The number
+of lines read and name of the saved text file are written to the command line output file underneath the URLs information.
+
+JPG and JPEG URLs are further processed by reading the image from the web page file, then saving and writting it to a
+JPEG file with the same name as the web page file, to the same directory where the program is executed. The name of the
+saved JPEG file is written to the command line output file underneath the URLs information.
+
+
