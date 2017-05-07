@@ -1,0 +1,1 @@
+Synchronization project, simulating a haunted house ride with passengers and cars.
