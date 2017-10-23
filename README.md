@@ -1,2 +1,2 @@
 # Projects
-My repository for source code of all school projects so far.
+My repository for source code of all projects so far.
