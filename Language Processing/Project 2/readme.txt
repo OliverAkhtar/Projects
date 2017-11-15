@@ -1,0 +1,1 @@
+Place training.txt and script in same directory, run script.py file.
